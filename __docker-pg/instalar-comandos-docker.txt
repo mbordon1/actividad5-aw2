@@ -1,0 +1,19 @@
+/// Crear la imagen
+docker build -t imagen_admin .
+
+/// Instanciar un contenedor a partir de la imagen
+docker run --name contenedor_admin -e POSTGRES_USER=root -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=admin -p 5432:5432 -d imagen_admin
+
+/// Verificar la cracion de la Base de Datos y la tabla
+
+////// Entrar al contenedor
+docker exec -it contenedor_admin bash
+
+////// Dentro del contenedor ejecutar:
+psql -U root -d admin --password
+////// Indicar la clave
+Password: 
+
+////// Ejecutar consulta
+tienda=# SELECT * FROM usuarios;
+////// debemos ver los usuarios insertados... 

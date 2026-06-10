@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>LOGIN</title>
+        <style>
+            body {
+                background: #f5f6fa;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Arial, sans-serif;
+            }
+            form {
+                background: #fff;
+                padding: 2rem 2.5rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+                min-width: 300px;
+            }
+            label {
+                font-weight: 500;
+                margin-bottom: 0.2rem;
+            }
+            input[type='text'],
+            input[type='password'] {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-top: 0.25rem;
+                font-size: 1rem;
+            }
+            button[type='submit'] {
+                background: #3498db;
+                color: #fff;
+                border: none;
+                padding: 0.7rem;
+                border-radius: 4px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            button[type='submit']:hover {
+                background: #217dbb;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form" action="/autenticar" method="post">
+            <label for="usuario">
+                Usuario:
+                <br />
+                <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    required
+                />
+            </label>
+            <br />
+            <label for="pass">
+                Password:
+                <br />
+                <input
+                    type="password"
+                    id="pass"
+                    name="pass"
+                    required
+                />
+            </label>
+            <br />
+            <button type="submit">Ingresar</button>
+            <br />
+            <a href="alta.html">Registrarse</a>
+        </form>
+        <script>
+            // const form = document.getElementById('form');
+            // form.addEventListener('submit', (event) => {
+            //     event.preventDefault(); // Prevent the form from submitting normally
+
+            //     const usuario = document.getElementById('usuario').value;
+            //     const pass = document.getElementById('pass').value;
+            //     // Indicamos la ruta relativa a la raiz del servidor
+            //     // El navegador agrega el dominio y el puerto
+            //     // Por ejemplo: http://localhost:3000/autenticacion
+            //     fetch('/autenticacion', {
+            //         method: 'POST',
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //         },
+            //         body: JSON.stringify({ usuario, pass }),
+            //     }).then((response) => {
+            //         if (!response.ok) {
+            //             console.log('Error');
+            //             alert('Credenciales no válidas')
+            //             form.reset()
+            //         } else {
+            //             // Si es con fetch hay que redireccionar manualmente
+            //             if (response.redirected) {
+            //                 window.location.href = response.url;
+            //             }
+            //             console.log('datos enviados');
+            //         }
+            //     });
+            // });
+        </script>
+    </body>
+</html>
