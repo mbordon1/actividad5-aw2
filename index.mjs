@@ -57,12 +57,9 @@ app.post('/registrar', async (req, res) => {
         [usuario, hash]
     );
 
-    if (resultado.rowCount > 0) {
-        return res.status(201).json({
-            mensaje: 'Usuario registrado',
-            usuario: resultado.rows[0].username
-        });
-    }
+   if (resultado.rowCount > 0) {
+    return res.redirect('/login')
+}
 
     res.status(500).json({ mensaje: 'No se pudo realizar el registro' });
 });

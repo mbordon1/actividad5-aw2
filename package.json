@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"node --watch index.mjs"
+    "dev": "nodemon index.mjs"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +23,8 @@
     "express": "^5.2.1",
     "nanoid": "^5.1.11",
     "pg": "^8.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
